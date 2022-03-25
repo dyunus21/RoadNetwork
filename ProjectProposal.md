@@ -9,7 +9,7 @@ Our final project will be investigating the shortest path from one location to a
 
 2. **Data Correction** We will create a jupyter file notebook and utilize python pandas library to filter out missing values as well as accounting for significant outliers. For example, we could filter out edges with extreme distance values. 
 
-3. **Data Storage** We will store our dataset as two structs - nodes and edges. Each node struct will contain the node ID, x coordinate, and y coordinate, while edge structs will contain the edge ID, start node ID, end node ID and distance. Each node will also contain a vector of edges starting at that node, which we will use to "follow" a path. We will use a heap and priority queue to implement our Dijkstra's algorithm to make it more efficient.
+3. **Data Storage** We will store our dataset as two structs - nodes and edges. Each node struct will contain the node ID, x coordinate, and y coordinate, while edge structs will contain the edge ID, start node ID, end node ID and distance. Each node will also contain a vector of edges starting at that node, which we will use to "follow" a path. We will use a heap and priority queue to implement our Dijkstra's algorithm to make it more efficient. We will approximately use O(v+e) storage where v is the number of nodes and e is the number of edges.
 
 
 ## Graph Algorithms
