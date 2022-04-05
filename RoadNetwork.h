@@ -35,8 +35,11 @@ class RoadNetwork{
         // Get distance between nodeA and nodeB
         double getDistance(Node* nodeA, Node* nodeB);
         
-        // returns the shortest path between two nodes using Dijikstra algorithm
-        std::vector<Node*> shortestPath(Node* nodeA, Node* nodeB);
+        // returns the shortest path between two nodes (in a matrix) using Dijikstra algorithm
+        std::vector<std::vector<Node*> > shortestPath(Node* nodeA, Node* nodeB);
+
+        // the output will be the importance of each node, which we will utilize to find the most important (central) node. 
+        std::vector<std::vector<Node*> > getImportance(std::vector<std::vector<Node*> > path);
         
     // Required private member variables   
     private:
