@@ -1,15 +1,15 @@
 ### Grade
-Not Yet Competent (70%)
+Competent (90%)
 
-Resubmit penalty will apply.
+(Grade includes 10% penalty)
 ### Comments
-There are major flaws in Leading Question and Algorithms. Minor flaw in Algorithms.
+Well written proposal with details.
 
 **Leading Question**
-The leading question mentions "central location" but does not clarify what is meant by the term. The graph datastructure and the algorithm to solve are also not clear. Please resubmit!
+Leading question is clear. 
 
 **Dataset**
 The dataset is well described and the intuition on the efficiency of runtime and storage are good (although we will see alternatives which are better in some contexts). 
 
 **Algorithm**
-How is the graph to be built? The pagerank algorithm works on directed edges, how do you plan to use the road dataset for the purpose? It is not clear how the centrality will be achieved. Finally, the complexity mentioned for dijkstra is achieved with Fibonacci heap. You may want to estimate an achievable complexity.
+While the algorithms are clearly specified, the format is a bit difficult to read. Too much detail included in Function inputs, meshing all 3 algorithms together, a better strategy would be describing for the 3 algorithms separately. 
