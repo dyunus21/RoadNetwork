@@ -6,8 +6,8 @@ This week, our goal was to go through the data set/tech stack needed for the pro
 
 *What specific tasks each member of your team accomplished in the week*
 Diya - Used the Pandas library to check for missing and inconsistent values
-Kriti - Learned and shared knowledge about the Pandas python library. Debugged anaconda issues.
-Rachel - Researched about the different graph algorithms (Dijkstra's and PageRank algorithm) that we will use in our program
+Kriti - Learned and shared knowledge about the Pandas python library. Debugged anaconda issues. Revised project proposal according to feedback received.
+Rachel - Researched about the different graph algorithms (Dijkstra's and PageRank algorithm) that we will use in our program. Revised project proposal according to feedback received.
 
 *What problems you encountered (if any) that prevented you from meeting your goals*
 Some problems we encountered were that we needed to understand the steps of our project in order to figure out which data is needed. Since we had minimal experience with this, we had some trouble downloading and starting up an anaconda vm and using python libraries to clean our data. 
