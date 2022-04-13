@@ -5,6 +5,8 @@
 # include <iostream>
 # include <cmath>
 # include <queue>
+# include <fstream>
+#include "utilities.hpp"
 
 //Class that defines the structure of our data storage 
 class RoadNetwork{
@@ -22,7 +24,6 @@ class RoadNetwork{
         int nodeID;
         double x;
         double y;
-        std::vector<Edge> startingEdges;
     };
     
     public:
