@@ -45,4 +45,5 @@ class RoadNetwork{
     private:
         std::priority_queue<Node*> roadQueue_;
         std::vector<Node*> roadHeap_;
+        std::vector<std::vector<double>> adjacencyMatrix;
 };
