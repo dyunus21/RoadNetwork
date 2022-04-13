@@ -33,3 +33,19 @@ We realized that python holds their dataframes as pointers, so when we were dele
 
 _What you plan to accomplish next week_
 Next week, we plan to begin to develop djikstra's algorithm and aggregate the csv data into our storage components. We hopefully will begin to explore potential ways to visualize our data as an actual graph (including external libraries/modules if necessary).
+
+## Development Log: 4/10/2022-4/16/2022
+
+_What goals you had set for the week and whether they were accomplished or not_
+This week, our goal was to export all our data from the preprocessing Python notebooks and process it for use within our C++ code. After doing so, we also wanted to implement the Dijkstra's algorithm for an adjacency matrix that we would create. We were able to accomplish all of the tasks we had set for this week and were able to implement the first of our algorithms for the final project. 
+
+_What specific tasks each member of your team accomplished in the week_
+Diya - Created the adjacency matrix given the edge and node vectors and the edge weights as the distance between two nodes. 
+Kriti - Exported data from the Python notebooks as .csv files and then read the data into vectors of structs so that they could be used in creation of graph matrices.
+Rachel - Implemented the Dijkstra's algorithm as a class that could be called from our RoadNetwork files
+
+_What problems you encountered (if any) that prevented you from meeting your goals_
+One problem that we encountered while working on this week's goals was determining the best way to store our adjacency matrix and process the data as we had very large datasets and wanted to take into consideration storage requirements. We also had some difficulties with Github as we lost several portions of our code in the process of merging our work together.
+
+_What you plan to accomplish next week_
+Next week, we plan on implementing the PageRank algorithm and then also creating more tests for each of the two algorithms. We will also start to explore potential ways to visualize the data and better display the information gathered to the user. At this point, we may also begin implementing basic UI features to improve the readability and usablity of our program.
