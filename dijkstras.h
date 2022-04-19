@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 
-class Dijkstras {
+class dijkstras {
     public:
         std::vector<int> dijkstra(std::vector<std::vector<int>> graph, int start);
     private:

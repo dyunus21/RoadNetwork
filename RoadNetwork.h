@@ -1,15 +1,15 @@
-# pragma once
-# include <vector>
-# include <string>
-# include <algorithm>
-# include <iostream>
-# include <cmath>
-# include <queue>
-# include <fstream>
-#include "utilities.hpp"
+#pragma once
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iostream>
+#include <cmath>
+#include <queue>
+#include <fstream>
+#include "utilities.cpp"
 
 //Class that defines the structure of our data storage 
-class RoadNetwork{
+class roadnetwork{
     //Edge will contain edgeId, startNodeId, endNodeId and the distance
     struct Edge {
         int edgeId;
