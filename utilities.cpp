@@ -1,4 +1,4 @@
-#include "utilities.hpp"
+#include "utilities.h"
 
 // Provided to you. Do not edit!
 
@@ -20,3 +20,4 @@ std::vector<std::string> utilities::Split(const std::string& str, char delimiter
 
   return substrs;
 }
+
