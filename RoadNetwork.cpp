@@ -1,6 +1,6 @@
-#include "RoadNetwork.h"
+#include "roadNetwork.h"
 
-RoadNetwork::RoadNetwork() {
+roadNetwork::roadNetwork() {
 
     //vectors to store edges and nodes
     std::vector<Edge> edges;
@@ -56,7 +56,8 @@ RoadNetwork::RoadNetwork() {
         adjacencyMatrix[edge.startNodeID][edge.endNodeId] = edge.distance;
         adjacencyMatrix[edge.endNodeId][edge.startNodeID] = edge.distance;
     }
+}
 
-    
-
+std::vector<std::vector<double>> roadnetwork::getAdjacencyMatrix(){
+    return adjacencyMatrix;
 }

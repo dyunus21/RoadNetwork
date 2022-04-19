@@ -42,6 +42,9 @@ class roadnetwork{
         // the output will be the importance of each node, which we will utilize to find the most important (central) node. 
         std::vector<std::vector<Node*> > getImportance(std::vector<std::vector<Node*> > path);
         
+        std::vector<std::vector<double>> getAdjacencyMatrix();
+
+        
     // Required private member variables   
     private:
         std::priority_queue<Node*> roadQueue_;
