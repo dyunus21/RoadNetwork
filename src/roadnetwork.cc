@@ -7,11 +7,14 @@ roadNetwork::roadNetwork() {
     std::vector<Node> nodes;
 
     //create file streams for edges and ndoes
-    std::fstream readEdges;
-    std::fstream readNodes;
+    // std::fstream readEdges;
+    // std::fstream readNodes;
 
-    readEdges.open("cleaned_edges.csv");
-    readNodes.open("cleaned_nodes.csv");
+    std::ifstream readEdges("src/cleaned_edges.csv");
+    std::ifstream readNodes("src/cleaned_nodes.csv");
+
+    // readEdges.open("cleaned_edges.csv");
+    // readNodes.open("cleaned_nodes.csv");
 
     //reading respective csv files for edges and nodes
     std::string currLineEdges;
@@ -19,6 +22,8 @@ roadNetwork::roadNetwork() {
 
     std::getline(readEdges, currLineEdges);
     std::getline(readNodes, currLineNodes);
+    std::cout << "in constructor: currLineEdges " << currLineEdges <<std::endl;
+    std::cout << "in constructor: currLineNodes " << currLineNodes <<std::endl;
 
     //creating vector for each line of the csv
     std::vector<std::string> currEdgeVector;
@@ -26,15 +31,19 @@ roadNetwork::roadNetwork() {
 
     //reading the files
     while(currLineEdges.size() != 0){
+        std::getline(readEdges, currLineEdges);
+        std::getline(readNodes, currLineNodes);
 
         //splitting each element between spaces and adding to a vector
-        currEdgeVector = utilities::Split(currLineEdges, ' ');
-        currNodeVector = utilities::Split(currLineEdges, ' ');
+        currEdgeVector = utilities::Split(currLineEdges, ',');
+        currNodeVector = utilities::Split(currLineEdges, ',');
 
         //creating new edge and node from struct
         Edge edgeToAdd = {std::stoi(currEdgeVector.at(0)), std::stoi(currEdgeVector.at(1)), std::stoi(currEdgeVector.at(2)), std::stod(currEdgeVector.at(3))};
         Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)),std::stod(currNodeVector.at(2))};
-
+        
+        std::cout << "currEdgeVectror: " << currEdgeVector.at(0) <<std::endl;
+     std::cout << "currNodeVector " << currNodeVector.at(0) <<std::endl;
         //adding edge and node to vectors
         edges.push_back(edgeToAdd);
         nodes.push_back(nodeToAdd);
