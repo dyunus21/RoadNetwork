@@ -30,29 +30,39 @@ roadNetwork::roadNetwork() {
     std::vector<std::string> currNodeVector;
 
     //reading the files
-    while(currLineEdges.size() != 0){
-        std::getline(readEdges, currLineEdges);
-        std::getline(readNodes, currLineNodes);
+    while(std::getline(readEdges, currLineEdges)){
 
-        //splitting each element between spaces and adding to a vector
+        //splitting each element between commas and adding to a vector
         currEdgeVector = utilities::Split(currLineEdges, ',');
-        currNodeVector = utilities::Split(currLineEdges, ',');
 
         //creating new edge and node from struct
         Edge edgeToAdd = {std::stoi(currEdgeVector.at(0)), std::stoi(currEdgeVector.at(1)), std::stoi(currEdgeVector.at(2)), std::stod(currEdgeVector.at(3))};
-        Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)),std::stod(currNodeVector.at(2))};
         
-        std::cout << "currEdgeVectror: " << currEdgeVector.at(0) <<std::endl;
-     std::cout << "currNodeVector " << currNodeVector.at(0) <<std::endl;
+        // std::cout << "currEdgeVectror: " << currEdgeVector.at(0) <<std::endl;
         //adding edge and node to vectors
         edges.push_back(edgeToAdd);
-        nodes.push_back(nodeToAdd);
 
         //clearing each vector to get it ready for the next line of the csv
         currEdgeVector.clear();
-        currNodeVector.clear();
     }
 
+    while( std::getline(readNodes, currLineNodes)){
+
+        //splitting each element between commas and adding to a vector
+        currNodeVector = utilities::Split(currLineEdges, ',');
+
+        //creating new edge and node from struct
+        Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)),std::stod(currNodeVector.at(2))};
+        
+        // std::cout << "currNodeVector " << currNodeVector.at(0) <<std::endl;
+        //adding edge and node to vectors
+        nodes.push_back(nodeToAdd);
+
+        //clearing each vector to get it ready for the next line of the csv
+        currNodeVector.clear();
+    }
+    std::cout <<"nodes size: " << nodes.size() << std::endl;
+    std::cout <<"edges size: " << edges.size() << std::endl;    
 
     // Created an empty adjacency matrix of size nodes x nodes
     for(size_t i = 0; i<nodes.size();i++) {
