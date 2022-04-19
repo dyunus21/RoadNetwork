@@ -1,12 +1,12 @@
-#pragma once
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <iostream>
-#include <cmath>
-#include <queue>
-#include <fstream>
-#include "utilities.cpp"
+# pragma once
+# include <vector>
+# include <string>
+# include <algorithm>
+# include <iostream>
+# include <cmath>
+# include <queue>
+# include <fstream>
+#include "utilities.h"
 
 //Class that defines the structure of our data storage 
 class roadnetwork{
@@ -28,7 +28,7 @@ class roadnetwork{
     
     public:
         // default constructor
-        RoadNetwork();
+        roadnetwork();
 
         // get node at coordinate
         Node* getNode(double x, double y);
