@@ -5,7 +5,7 @@
 
 class pagerank {
     public:
-        std::vector<int> pagerank_ranks(std::vector<std::vector<int>> graph);
+        std::vector<float> pagerank_ranks(std::vector<std::vector<float>> graph);
     private:
-        std::vector<std::vector<int>> adjustMatrix(std::vector<std::vector<int>> graph);
+        std::vector<std::vector<float>> adjustMatrix(std::vector<std::vector<float>> graph);
 };
