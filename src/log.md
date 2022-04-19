@@ -37,10 +37,10 @@ Next week, we plan to begin to develop djikstra's algorithm and aggregate the cs
 ## Development Log: 4/10/2022-4/16/2022
 
 _What goals you had set for the week and whether they were accomplished or not_
-This week, our goal was to export all our data from the preprocessing Python notebooks and process it for use within our C++ code. After doing so, we also wanted to implement the Dijkstra's algorithm for an adjacency matrix that we would create. We were able to accomplish all of the tasks we had set for this week and were able to implement the first of our algorithms for the final project. 
+This week, our goal was to export all our data from the preprocessing Python notebooks and process it for use within our C++ code. After doing so, we also wanted to implement the Dijkstra's algorithm for an adjacency matrix that we would create. We were able to accomplish all of the tasks we had set for this week and were able to implement the first of our algorithms for the final project.
 
 _What specific tasks each member of your team accomplished in the week_
-Diya - Created the adjacency matrix given the edge and node vectors and the edge weights as the distance between two nodes. 
+Diya - Created the adjacency matrix given the edge and node vectors and the edge weights as the distance between two nodes.
 Kriti - Exported data from the Python notebooks as .csv files and then read the data into vectors of structs so that they could be used in creation of graph matrices.
 Rachel - Implemented the Dijkstra's algorithm as a class that could be called from our RoadNetwork files
 
@@ -49,3 +49,18 @@ One problem that we encountered while working on this week's goals was determini
 
 _What you plan to accomplish next week_
 Next week, we plan on implementing the PageRank algorithm and then also creating more tests for each of the two algorithms. We will also start to explore potential ways to visualize the data and better display the information gathered to the user. At this point, we may also begin implementing basic UI features to improve the readability and usablity of our program.
+
+## Development Log: 4/18/2022-4/23/2022
+
+_What goals you had set for the week and whether they were accomplished or not_
+This week, our goal was to create the pagerank algorithm to find the most significant node and a driver file to collect user input on which we will perform the pagerank algorithm on.
+
+_What specific tasks each member of your team accomplished in the week_
+Diya - Helped make makefile and fix compiler errors.
+Kriti - Created driver file to collect user input and create instances of roadnetwork and djikstras.
+Rachel - Implemented the PageRank algorithm as a class that could be called from our RoadNetwork files
+
+_What problems you encountered (if any) that prevented you from meeting your goals_
+One problem that we encountered while working on this week's goals was creating the makefile and resolving our merge conflicts. One of the errors we had while creating the makefile was related to the file extensions of the files, which we resolved by changing the extensions of the files from .cpp to .cc. Unfortunately, when we pushed and pulled our code from each other's changes, there were multiple merge conflicts which messed up our code.
+_What you plan to accomplish next week_
+Next week, we plan on finishing and testing our pagerank and djikstra algorithm. Then we can start on the UI where we overlay a map and have UI components to input location.
