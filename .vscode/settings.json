@@ -69,7 +69,13 @@
     "fstream": "cpp",
     "iomanip": "cpp",
     "stack": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "__tree": "cpp",
+    "map": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "regex": "cpp",
+    "set": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }

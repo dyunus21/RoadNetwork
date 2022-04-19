@@ -1,9 +1,14 @@
 #include <stdlib.h>
+#include "pagerank.hpp"
 
-std::vector<float> pagerank::pagerank_ranks(std::vector<std::vector<float>> graph) {
-    std::vector<std::vector<float>> new_graph = adjustMatrix(graph);
+/* this function performs the pagerank algorithm
+    @param graph: the intitial adjacency matrix
+    @return the ranks of each node as an N by 1 vector
+*/
+std::vector<std::vector<float> > pagerank::pagerank_ranks(std::vector<std::vector<float> > graph) {
+    std::vector<std::vector<float> > new_graph = adjustMatrix(graph);
     int N = new_graph[0].size();
-    std::vector<std::vector<float>>;
+    std::vector<std::vector<float> > ranks;
     // create vector of length N with floats from 0 to 1
     for (int i = 0; i < N; i++) {
         ranks.push_back(std::vector<float>(RAND_MAX + 1.0));
@@ -19,11 +24,11 @@ std::vector<float> pagerank::pagerank_ranks(std::vector<std::vector<float>> grap
     }
 
     // calculates M_hat = (d * M + (1 - d) / N)
-    std::vector<std::vector<float>> new_graph_hat;
-    for (int i = 0; i < graphs.size(); i++) {
+    std::vector<std::vector<float> > new_graph_hat;
+    for (int i = 0; i < (int) new_graph.size(); i++) {
         std::vector<float> row;
-        for (int j = 0; j < graphs[0].size(); j++) {
-            float new_val = (0.85 * graphs[i][j] + (1 - 0.85) / N);
+        for (int j = 0; j < (int) new_graph[0].size(); j++) {
+            float new_val = (0.85 * new_graph[i][j] + (1 - 0.85) / N);
             row.push_back(new_val);
         }
         new_graph_hat.push_back(row);
@@ -45,19 +50,27 @@ std::vector<float> pagerank::pagerank_ranks(std::vector<std::vector<float>> grap
 
     return ranks;
 }
-std::vector<std::vector<float>> pagerank::adjustMatrix(std::vector<std::vector<float>> graph) {
-    std::vector<std::vector<float>> new_graph;
+
+/* this function ensures that the columns of the entire adjacency matrix sum up to one (helper for pagerank alg)
+    @param graph: the intitial adjacency matrix
+    @return the adjusted adjacency matrix
+*/
+std::vector<std::vector<float> > pagerank::adjustMatrix(std::vector<std::vector<float> > graph) {
+    std::vector<std::vector<float> > new_graph;
     std::vector<int> sums(graph[0].size(), 0);      // sum of each column
-    for (int j = 0; j < graph.size(); j++) {
-            sums[i] += graph[j][i];
+    for (int j = 0; j < (int) graph.size(); j++) {
+        for (int i = 0; i < (int) graph[0].size(); i++) {
+            if (graph[i][j] != 0) {
+                sums[i]++;
+            }
         }
     }
-    for (int i = 0; i < graph.size(); i++) {
-        for (int j = 0; j < graph[0].size(); j++) {
+    for (int i = 0; i < (int) graph.size(); i++) {
+        for (int j = 0; j < (int) graph[0].size(); j++) {
             if (sums[j] == 0) {
                 new_graph[i][j] = 0;
             } else {
-                new_graph[i][j] = graph[i][j]/sums[j];
+                new_graph[i][j] = 1/sums[j];
             }
         }
     }

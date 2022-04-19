@@ -1,5 +1,5 @@
 #include "dijkstras.hpp"
-
+#include <iostream>
 /*
 Used to find the single source Dijstra's shortest path given an adjacency matrix
 implemented as a vector of vectors
@@ -8,11 +8,12 @@ implemented as a vector of vectors
 @return vector with the distance from each node to another
 */
 std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<double> > graph, int start) {
+    if (graph.size() == 0) {
+        return std::vector<float>();
+    }
     std::vector<float> distances(graph.size(), INT32_MAX); // return variable: holds distance from start node to another
-    std::vector<int> shortest_path; // shortest path set: node i will be included if i is part of the shortest path tree/shortest distance has been followed
-
+    std::vector<int> shortest_path; // shortest path set: node i will be included if i is part of the shortest path tree/shortest distance has been followed;
     distances[start] = 0; // distance from source to self is 0
-
     for (int vertex = 0; vertex < int(graph.size()) - 1; vertex++) {
         // find minimum distance vertex from the vertices that haven't been visited/aren't part of shortest_path
         int shortest_idx = minDistance(distances, shortest_path);
