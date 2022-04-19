@@ -1,7 +1,7 @@
 #include "pagerank.hpp"
 std::vector<int> pagerank::pagerank_ranks(std::vector<std::vector<int> > graph) {
     std::vector<std::vector<int> > new_graph = adjustMatrix(graph);
-    return new_graph;
+    return new_graph[0];
 }
 
 std::vector<std::vector<int> > pagerank::adjustMatrix(std::vector<std::vector<int> > graph) {

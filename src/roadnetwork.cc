@@ -32,8 +32,8 @@ roadNetwork::roadNetwork() {
         currNodeVector = utilities::Split(currLineEdges, ' ');
 
         //creating new edge and node from struct
-        Edge edgeToAdd{std::stoi(currEdgeVector.at(0)), std::stoi(currEdgeVector.at(1)), std::stoi(currEdgeVector.at(2)), std::stod(currEdgeVector.at(3))};
-        Node nodeToAdd{std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)),std::stod(currNodeVector.at(2))};
+        Edge edgeToAdd = {std::stoi(currEdgeVector.at(0)), std::stoi(currEdgeVector.at(1)), std::stoi(currEdgeVector.at(2)), std::stod(currEdgeVector.at(3))};
+        Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)),std::stod(currNodeVector.at(2))};
 
         //adding edge and node to vectors
         edges.push_back(edgeToAdd);
@@ -46,18 +46,19 @@ roadNetwork::roadNetwork() {
 
 
     // Created an empty adjacency matrix of size nodes x nodes
-    for(int i = 0; i<nodes.size();i++) {
+    for(size_t i = 0; i<nodes.size();i++) {
         std::vector<double> row(nodes.size());
         adjacencyMatrix.push_back(row);
     }
 
     // Stores L2 Distances between every node
-    for (Edge edge : edges) {
+    for (size_t i = 0; i<edges.size();i++) {
+        Edge edge = edges[i];
         adjacencyMatrix[edge.startNodeID][edge.endNodeId] = edge.distance;
         adjacencyMatrix[edge.endNodeId][edge.startNodeID] = edge.distance;
     }
 }
 
-std::vector<std::vector<double>> roadnetwork::getAdjacencyMatrix(){
+std::vector<std::vector<double> > roadNetwork::getAdjacencyMatrix(){
     return adjacencyMatrix;
 }

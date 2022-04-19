@@ -7,13 +7,13 @@ implemented as a vector of vectors
 @param start: node to start from
 @return vector with the distance from each node to another
 */
-std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<int>> graph, int start) {
+std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<double> > graph, int start) {
     std::vector<float> distances(graph.size(), INT32_MAX); // return variable: holds distance from start node to another
     std::vector<int> shortest_path; // shortest path set: node i will be included if i is part of the shortest path tree/shortest distance has been followed
 
     distances[start] = 0; // distance from source to self is 0
 
-    for (int vertex = 0; vertex < int(graph.size()) - 1; i++) {
+    for (int vertex = 0; vertex < int(graph.size()) - 1; vertex++) {
         // find minimum distance vertex from the vertices that haven't been visited/aren't part of shortest_path
         int shortest_idx = minDistance(distances, shortest_path);
 
@@ -40,7 +40,7 @@ that are not in the shortest path
 @param shortest_path: set of nodes visited
 @return minimum index with the minimum distance value
 */
-int Dijkstras::minDistance(std::vector<float> distances, std::vector<int> shortest_path) {
+int dijkstras::minDistance(std::vector<float> distances, std::vector<int> shortest_path) {
     int min_distance = INT32_MAX;
     int min_index = 0;
     for (int i = 0; i < (int)distances.size(); i++) {

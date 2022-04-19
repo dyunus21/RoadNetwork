@@ -9,7 +9,7 @@
 #include "utilities.hpp"
 
 //Class that defines the structure of our data storage 
-class roadnetwork{
+class roadNetwork{
     //Edge will contain edgeId, startNodeId, endNodeId and the distance
     struct Edge {
         int edgeId;
@@ -28,7 +28,7 @@ class roadnetwork{
     
     public:
         // default constructor
-        roadnetwork();
+        roadNetwork();
 
         // get node at coordinate
         Node* getNode(double x, double y);
@@ -42,12 +42,12 @@ class roadnetwork{
         // the output will be the importance of each node, which we will utilize to find the most important (central) node. 
         std::vector<std::vector<Node*> > getImportance(std::vector<std::vector<Node*> > path);
         
-        std::vector<std::vector<double>> getAdjacencyMatrix();
+        std::vector<std::vector<double> > getAdjacencyMatrix();
 
         
     // Required private member variables   
     private:
         std::priority_queue<Node*> roadQueue_;
         std::vector<Node*> roadHeap_;
-        std::vector<std::vector<double>> adjacencyMatrix;
+        std::vector<std::vector<double> > adjacencyMatrix;
 };
