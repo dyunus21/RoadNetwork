@@ -1,3 +1,5 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "roadnetwork.h"
 #include "dijkstras.h"
 #include "utilities.h"
@@ -10,4 +12,15 @@ void main() {
     std::cin >> nodeId;
     std::vector<int> dijkstraGraph = dijkstras(graph, nodeId );
 
+=======
+=======
+>>>>>>> Stashed changes
+#include "RoadNetwork.h"
+#include <iostream>
+void main(){
+    std::cout<<"hi";
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 }

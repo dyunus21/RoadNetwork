@@ -46,6 +46,10 @@ roadNetwork::roadNetwork() {
 
 
     // Created an empty adjacency matrix of size nodes x nodes
+
+    std::vector<Edge> edges;
+    std::vector<Node> nodes;
+
     for(int i = 0; i<nodes.size();i++) {
         std::vector<double> row(nodes.size());
         adjacencyMatrix.push_back(row);
@@ -56,6 +60,14 @@ roadNetwork::roadNetwork() {
         adjacencyMatrix[edge.startNodeID][edge.endNodeId] = edge.distance;
         adjacencyMatrix[edge.endNodeId][edge.startNodeID] = edge.distance;
     }
+<<<<<<< Updated upstream
+=======
+
+    
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 }
 
 std::vector<std::vector<double>> roadnetwork::getAdjacencyMatrix(){

@@ -9,7 +9,7 @@
 #include "utilities.h"
 
 //Class that defines the structure of our data storage 
-class roadnetwork{
+class RoadNetwork{
     //Edge will contain edgeId, startNodeId, endNodeId and the distance
     struct Edge {
         int edgeId;
