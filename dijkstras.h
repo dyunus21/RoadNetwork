@@ -5,7 +5,7 @@
 
 class dijkstras {
     public:
-        std::vector<int> dijkstra_path(std::vector<std::vector<int>> graph, int start);
+        std::vector<float> dijkstra_path(std::vector<std::vector<int>> graph, int start);
     private:
-        int minDistance(std::vector<int> distances, std::vector<bool> shortest_path);
+        int minDistance(std::vector<float> distances, std::vector<int> shortest_path);
 };

@@ -7,8 +7,8 @@ implemented as a vector of vectors
 @param start: node to start from
 @return vector with the distance from each node to another
 */
-std::vector<int> dijkstras::dijkstra_path(std::vector<std::vector<int>> graph, int start) {
-    std::vector<int> distances(graph.size(), INT32_MAX); // return variable: holds distance from start node to another
+std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<int>> graph, int start) {
+    std::vector<float> distances(graph.size(), INT32_MAX); // return variable: holds distance from start node to another
     std::vector<int> shortest_path; // shortest path set: node i will be included if i is part of the shortest path tree/shortest distance has been followed
 
     distances[start] = 0; // distance from source to self is 0
