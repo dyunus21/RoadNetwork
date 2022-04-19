@@ -23,7 +23,7 @@ std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<double> > gr
         for (int v_adj = 0; v_adj < (int)graph.size(); v_adj++) {
             // if the adjacent vertex isn't in shortest_path, an edge exists between min distance index
             // and v_adj and the path from start to v_adj is shorter, then update distance at v_adj
-            if (std::find(shortest_path.begin(), shortest_path.end(), v_adj) == shortest_path.end() && 
+            if (shortest_idx < (int)distances.size() && shortest_idx < (int)graph.size() && std::find(shortest_path.begin(), shortest_path.end(), v_adj) == shortest_path.end() && 
                 graph[shortest_idx][v_adj] && distances[shortest_idx] != INT32_MAX && (distances[shortest_idx] + graph[shortest_idx][v_adj]) < distances[v_adj])
                 distances[v_adj] = distances[shortest_idx] + graph[shortest_idx][v_adj];
         }
