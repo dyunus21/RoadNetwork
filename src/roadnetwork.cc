@@ -11,8 +11,8 @@ roadNetwork::roadNetwork()
     //  std::fstream readEdges;
     //  std::fstream readNodes;
 
-    std::ifstream readEdges("src/cleaned_edges.csv");
-    std::ifstream readNodes("src/cleaned_nodes.csv");
+    std::ifstream readEdges("src/cleaned_edges_small.csv");
+    std::ifstream readNodes("src/cleaned_nodes_small.csv");
 
     // readEdges.open("cleaned_edges.csv");
     // readNodes.open("cleaned_nodes.csv");
@@ -82,6 +82,7 @@ roadNetwork::roadNetwork()
         Edge edge = edges[i];
         adjacencyMatrix[edge.startNodeID][edge.endNodeId] = edge.distance;
         adjacencyMatrix[edge.endNodeId][edge.startNodeID] = edge.distance;
+        std::cout << i << std::endl;
     }
     std::cout << "done";
 }
