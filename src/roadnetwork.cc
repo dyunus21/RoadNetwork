@@ -47,7 +47,6 @@ roadNetwork::roadNetwork()
         // clearing each vector to get it ready for the next line of the csv
         currEdgeVector.clear();
     }
-
     while (std::getline(readNodes, currLineNodes))
     {
 
@@ -67,24 +66,26 @@ roadNetwork::roadNetwork()
     std::cout << "nodes size: " << nodes.size() << std::endl;
     std::cout << "edges size: " << edges.size() << std::endl;
 
+    int largest_node = nodes[nodes.size() - 1].nodeID;
     // Created an empty adjacency matrix of size nodes x nodes
     // for(size_t i = 0; i<nodes.size();i++) {
     //     std::vector<double> row(nodes.size());
     //     adjacencyMatrix.push_back(row);
     //     std::cout<<i<<std::endl;
     // }
-    std::vector<std::vector<double> > adj(nodes.size(), std::vector<double>(nodes.size(), 0.0));
+    std::vector<std::vector<double> >
+        adj(largest_node + 1, std::vector<double>(largest_node + 1, 0.0));
     std::cout << "adjacency matrix size: " << adj.size() << std::endl;
     std::cout << "adjacency matrix[0] size: " << adj[0].size() << std::endl;
+    adjacencyMatrix = adj;
     // Stores L2 Distances between every node
     for (size_t i = 0; i < edges.size(); i++)
     {
         Edge edge = edges[i];
         adjacencyMatrix[edge.startNodeID][edge.endNodeId] = edge.distance;
         adjacencyMatrix[edge.endNodeId][edge.startNodeID] = edge.distance;
-        std::cout << i << std::endl;
     }
-    std::cout << "done";
+    std::cout << "done" << std::endl;
 }
 
 std::vector<std::vector<double> > roadNetwork::getAdjacencyMatrix()
