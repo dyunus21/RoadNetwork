@@ -64,3 +64,19 @@ _What problems you encountered (if any) that prevented you from meeting your goa
 One problem that we encountered while working on this week's goals was creating the makefile and resolving our merge conflicts. One of the errors we had while creating the makefile was related to the file extensions of the files, which we resolved by changing the extensions of the files from .cpp to .cc. Unfortunately, when we pushed and pulled our code from each other's changes, there were multiple merge conflicts which messed up our code.
 _What you plan to accomplish next week_
 Next week, we plan on finishing and testing our pagerank and djikstra algorithm. Then we can start on the UI where we overlay a map and have UI components to input location.
+
+## Development Log: 4/24/2022-5/1/2022
+
+_What goals you had set for the week and whether they were accomplished or not_
+This week, our goal was to work on implementing a user interface for the user to interact with our code. We also wanted to finish and test our pagerank and dijkstra algorithm. We were able to work on testing the pagerank and dijkstra's and also creating smaller datasets to create test benches with. However, we realized that the GUI interfaces for C++ were not quite what we were looking for and decided to instead focus on accessing data directly in the console
+
+_What specific tasks each member of your team accomplished in the week_
+Diya - Created test cases, assisted with data processing.
+Kriti - Corrected and informally tested Dijkstra's algorithm.
+Rachel - Created smaller dataset to test with and adjusted the PageRank algorithm to avoid segfaults.
+
+_What problems you encountered (if any) that prevented you from meeting your goals_
+One problem that we encountered while working on this weeks goals were that our data was poorly structured and our adjacency matrix was not created properly. We also had slight issues with the Dijkstra and Pagerank algorithms, so we had to spend more of our time working ont hat.
+
+_What you plan to accomplish next week_
+Next week, we plan on completely finishing our program and creating the final deliverables that are due on Friday. 
