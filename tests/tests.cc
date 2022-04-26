@@ -1,5 +1,5 @@
 #include "catch.hpp"
-#include "/Users/diyayunus/Library/CloudStorage/OneDrive-UniversityofIllinois-Urbana/CS 225/dyunus2-kritim2-rachelh8/src/roadNetwork.hpp"
+#include "../src/roadnetwork.hpp"
 #include <iostream>
 
 TEST_CASE("Check Adjacency Matrix", "[Adj_Matrix]") {

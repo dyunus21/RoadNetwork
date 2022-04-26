@@ -1,4 +1,8 @@
 
-/bin/exec
-./bin/tests
-./bin/tests.dSYM
+
+bin/tests
+/bin/tests.dSYM
+/bin/catch.o
+
+bin/exec
+obj/catch.o
