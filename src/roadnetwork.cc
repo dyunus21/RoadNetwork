@@ -14,8 +14,9 @@ roadNetwork::roadNetwork()
     std::ifstream readEdges("src/cleaned_edges_small.csv");
     std::ifstream readNodes("src/cleaned_nodes_small.csv");
 
-    // readEdges.open("cleaned_edges.csv");
-    // readNodes.open("cleaned_nodes.csv");
+
+    // std::ifstream readEdges("src/cleaned_edges.csv");
+    // std::ifstream readNodes("src/cleaned_nodes.csv");
 
     // reading respective csv files for edges and nodes
     std::string currLineEdges;

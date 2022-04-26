@@ -29,6 +29,12 @@ std::vector<float> dijkstras::dijkstra_path(std::vector<std::vector<double> > gr
                 distances[v_adj] = distances[shortest_idx] + graph[shortest_idx][v_adj];
         }
     } 
+
+    for(unsigned i = 0; i < distances.size(); i++){
+        if(distances[i] == INT32_MAX) {
+            distances[i] = -1;
+        }
+    }
     
     return distances;
 }
