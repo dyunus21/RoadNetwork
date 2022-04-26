@@ -1,8 +1,9 @@
-#include "roadNetwork.hpp"
+#include "roadnetwork.hpp"
 #include "dijkstras.hpp"
 #include "utilities.hpp"
 
-int main() {
+int main()
+{
     roadNetwork network;
     dijkstras dijkstra;
     // int nodeId;
