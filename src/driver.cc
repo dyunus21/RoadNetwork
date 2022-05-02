@@ -24,22 +24,21 @@ int main()
     //         std::cout << "distance to node " << i << " : " << dijkstraGraph[i] << std::endl;
     // }
     pagerank pgrank;
-    std::vector<std::vector<float> > result = pgrank.pagerank_ranks(graph);
-    std::vector<float> result1d;
-    for (size_t i = 0; i < result.size(); i++)
-    {
-        result1d.push_back(result[i][0]);
-    }
-    int maxIndex = std::max_element(result1d.begin(), result1d.end()) - result1d.begin();
+    std::vector<float> result = pgrank.pagerank_ranks(graph);
+    int maxIndex = std::max_element(result.begin(), result.end()) - result.begin();
     std::vector<Node> nodes = network.getNodes();
-    Node most_common = nodes[maxIndex - (maxIndex - nodes.size() + 1)];
+    Node most_common;
+    for (size_t i = 0; i < nodes.size(); i++)
+    {
+        if (nodes[i].nodeID == maxIndex)
+        {
+            most_common = nodes[i];
+            break;
+        }
+    }
     std::cout
         << "\nthe most common node is node " << maxIndex << " located at (" << most_common.x << ", " << most_common.y << ")\n"
         << std::endl;
 
-    // for (size_t i = 0; i < result.size(); i++)
-    // {
-    //     std::cout << "node " << i << ": " << result[i][0] << std::endl;
-    // }
     return 0;
 }

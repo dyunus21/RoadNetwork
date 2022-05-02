@@ -6,30 +6,27 @@
     @param graph: the intitial adjacency matrix
     @return the ranks of each node as an N by 1 vector
 */
-std::vector<std::vector<float> > pagerank::pagerank_ranks(std::vector<std::vector<double> > graph)
+std::vector<float> pagerank::pagerank_ranks(std::vector<std::vector<double> > graph)
 {
     std::vector<std::vector<double> > new_graph = adjustMatrix(graph);
     int N = new_graph[0].size();
-    std::vector<std::vector<float> > ranks;
+    std::vector<float> ranks;
     // create vector of length N with floats from 0 to 1
     for (int i = 0; i < N; i++)
     {
-        ranks.push_back(std::vector<float>(1, static_cast<float>(rand()) / static_cast<float>(RAND_MAX)));
+        ranks.push_back((float)rand() / RAND_MAX);
     }
     // calculates sum(abs(x)): norm of vector N
-    int norm = 0;
+    float norm = 0;
     for (int i = 0; i < N; i++)
     {
-        if (ranks[i][0] < 0)
-        {
-            norm -= ranks[i][0];
-        }
-        else
-        {
-            norm += ranks[i][0];
-        }
+        norm += ranks[i];
+        // std::cout << norm << std::endl;
     }
-
+    for (size_t i = 0; i < ranks.size(); i++)
+    {
+        ranks[i] /= norm;
+    }
     // calculates M_hat = (d * M + (1 - d) / N)
     std::vector<std::vector<float> > new_graph_hat;
     for (int i = 0; i < (int)new_graph.size(); i++)
@@ -43,29 +40,17 @@ std::vector<std::vector<float> > pagerank::pagerank_ranks(std::vector<std::vecto
         new_graph_hat.push_back(row);
     }
     // iterate through ten times
-    // for (int i = 0; i < 10; i++)
+    // for (int k = 0; k < 10; k++)
     // {
-    // ranks = M_hat @ v
-    // int r1 = new_graph_hat.size();
-    // int c1 = new_graph_hat[0].size();
-    // for (int j = 0; j < r1; j++)
-    // {
-    //     for (int k = 0; k < N; k++)
-    //     {
-    //         for (int l = 0; l < c1; l++)
-    //         {
-    //             ranks[j][0] += new_graph_hat[j][l] * ranks[l][k];
-    //         }
-    //     }
-    // }
-    for (int i = 0; i < (int)new_graph_hat.size(); i++)
+    std::vector<float> result(ranks.size(), 0);
+    for (int i = 0; i < N; i++)
     {
-        ranks[i][0] = 0;
         for (int j = 0; j < (int)ranks.size(); j++)
         {
-            ranks[i][0] += new_graph_hat[i][j] * ranks[j][0];
+            result[i] += new_graph_hat[i][j] * ranks[i];
         }
     }
+    ranks = result;
     // }
 
     return ranks;
