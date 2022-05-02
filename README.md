@@ -16,5 +16,7 @@ All of the final deliverables (video demonstration and final report) can be foun
 ### Test Suite Execution
 1. Run `make tests` in the command line to compile the code
 2. Run `bin/tests` in the command line to run the tests
-## Tests
+### Tests
 The test suite contains tests to ensure the adjacency matrix is properly created, that Dijkstra returns the proper output and PageRank runs correctly on a smaller subset of the main dataset. 
+### Data Format
+The edges.csv file should be in the format `Edge Node ID,Start Node ID,End Node ID,L2 Distance` where the L2 Distance is the distance covered by the edge and the nodes.csv file in the format `Node ID,NormX,NormY` where NormX and NormY represent the normalized X and Y coordinates of the node. There should not be any empty lines in these files nor the cleaned .csv files.
