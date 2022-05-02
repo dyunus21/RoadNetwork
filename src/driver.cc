@@ -7,21 +7,39 @@ int main()
 {
     roadNetwork network;
     dijkstras dijkstra;
-    int nodeId;
+    // int nodeId;
     std::vector<std::vector<double> > graph = network.getAdjacencyMatrix();
     // validate input
-    do
-    {
-        std::cout << "Hello, please enter a node id (from 0 to " << graph.size() << ")!" << std::endl;
-        std::cin >> nodeId;
-    } while (nodeId < 0 || nodeId >= (int)graph.size());
+    // do
+    // {
+    //     std::cout << "Hello, please enter a node id (from 0 to " << graph.size() << ")!" << std::endl;
+    //     std::cin >> nodeId;
+    // } while (nodeId < 0 || nodeId >= (int)graph.size());
 
-    std::vector<float> dijkstraGraph = dijkstra.dijkstra_path(graph, nodeId);
-    std::cout << "Distances from nodeID to other nodes: note that only reachable nodes are printed" << std::endl;
-    for (size_t i = 0; i < dijkstraGraph.size(); i++)
+    // std::vector<float> dijkstraGraph = dijkstra.dijkstra_path(graph, nodeId);
+    // std::cout << "Distances from nodeID to other nodes: note that only reachable nodes are printed" << std::endl;
+    // for (size_t i = 0; i < dijkstraGraph.size(); i++)
+    // {
+    //     if (dijkstraGraph[i] != -1 && i != (size_t)nodeId)
+    //         std::cout << "distance to node " << i << " : " << dijkstraGraph[i] << std::endl;
+    // }
+    pagerank pgrank;
+    std::vector<std::vector<float> > result = pgrank.pagerank_ranks(graph);
+    std::vector<float> result1d;
+    for (size_t i = 0; i < result.size(); i++)
     {
-        if (dijkstraGraph[i] != -1 && i != (size_t)nodeId)
-            std::cout << "distance to node " << i << " : " << dijkstraGraph[i] << std::endl;
+        result1d.push_back(result[i][0]);
     }
+    int maxIndex = std::max_element(result1d.begin(), result1d.end()) - result1d.begin();
+    std::vector<Node> nodes = network.getNodes();
+    Node most_common = nodes[maxIndex - (maxIndex - nodes.size() + 1)];
+    std::cout
+        << "\nthe most common node is node " << maxIndex << " located at (" << most_common.x << ", " << most_common.y << ")\n"
+        << std::endl;
+
+    // for (size_t i = 0; i < result.size(); i++)
+    // {
+    //     std::cout << "node " << i << ": " << result[i][0] << std::endl;
+    // }
     return 0;
 }

@@ -3,10 +3,6 @@
 roadNetwork::roadNetwork()
 {
 
-    // vectors to store edges and nodes
-    std::vector<Edge> edges;
-    std::vector<Node> nodes;
-
     // create file streams for edges and ndoes
     std::ifstream readEdges("src/cleaned_edges_small.csv");
     std::ifstream readNodes("src/cleaned_nodes_small.csv");
@@ -43,11 +39,11 @@ roadNetwork::roadNetwork()
     {
 
         // splitting each element between commas and adding to a vector
-        currNodeVector = utilities::Split(currLineEdges, ',');
+        currNodeVector = utilities::Split(currLineNodes, ',');
+        // std::cout << currNodeVector[0] << " " << currNodeVector[1] << " " << currNodeVector[2] << std::endl;
 
         // creating new edge and node from struct
-        Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stod(currNodeVector.at(1)), std::stod(currNodeVector.at(2))};
-
+        Node nodeToAdd = {std::stoi(currNodeVector.at(0)), std::stoi(currNodeVector.at(1)), std::stoi(currNodeVector.at(2))};
         // std::cout << "currNodeVector " << currNodeVector.at(0) <<std::endl;
         // adding edge and node to vectors
         nodes.push_back(nodeToAdd);
@@ -75,4 +71,14 @@ roadNetwork::roadNetwork()
 std::vector<std::vector<double> > roadNetwork::getAdjacencyMatrix()
 {
     return adjacencyMatrix;
+}
+
+std::vector<Edge> roadNetwork::getEdges()
+{
+    return edges;
+}
+
+std::vector<Node> roadNetwork::getNodes()
+{
+    return nodes;
 }
