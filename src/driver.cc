@@ -9,14 +9,19 @@ int main()
     dijkstras dijkstra;
     int nodeId;
     std::vector<std::vector<double> > graph = network.getAdjacencyMatrix();
-    std::cout << "Hello, please enter a node Id!" << std::endl;
-    std::cin >> nodeId;
-    std::cout << "this is nodeId: " << nodeId << std::endl;
+    // validate input
+    do
+    {
+        std::cout << "Hello, please enter a node id (from 0 to " << graph.size() << ")!" << std::endl;
+        std::cin >> nodeId;
+    } while (nodeId < 0 || nodeId >= (int)graph.size());
+
     std::vector<float> dijkstraGraph = dijkstra.dijkstra_path(graph, nodeId);
-    // std::vector<float> dijkstraGraph = dijkstra.dijkstra_path(graph, 0 );
+    std::cout << "Distances from nodeID to other nodes: note that only reachable nodes are printed" << std::endl;
     for (size_t i = 0; i < dijkstraGraph.size(); i++)
     {
-        std::cout << "distance to " << i << " node: " << dijkstraGraph[i] << std::endl;
+        if (dijkstraGraph[i] != -1 && i != (size_t)nodeId)
+            std::cout << "distance to node " << i << " : " << dijkstraGraph[i] << std::endl;
     }
     return 0;
 }
