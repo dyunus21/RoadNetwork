@@ -65,6 +65,3 @@ TEST_CASE("PageRank Test","[PageRank]") {
     int maxIndex = std::max_element(result.begin(), result.end()) - result.begin();
     REQUIRE(maxIndex == 2);
 }
-
-
-
