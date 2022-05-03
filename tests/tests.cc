@@ -9,7 +9,6 @@ bool checkResult(std::vector<float> out, std::vector<float> result) {
     for(size_t i =0; i<result.size();i++) {
         if(out[i]!=result[i])
             return false;
-        // std::cout<<out[i]<<std::endl;
     }
     return true;
 }
@@ -29,7 +28,7 @@ TEST_CASE("Check Adjacency Matrix", "[Adj_Matrix]") {
 }
 
 // Tests functionality of Dijkstras Algorithm
-TEST_CASE("Check Dijkstras Algorithm","[Dijkstra's Algorithm]") {
+TEST_CASE("Check Dijkstras Algorithm","[Dijkstra]") {
     std::vector<std::vector<double> > graph= { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
                                             { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
                                             { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
@@ -51,7 +50,7 @@ TEST_CASE("Check Dijkstras Algorithm","[Dijkstra's Algorithm]") {
 }
 
 // Tests functionality for PageRank Algorithm
-TEST_CASE("PageRank Test","[PageRank_Algorithm]") {
+TEST_CASE("PageRank Test","[PageRank]") {
     std::vector<std::vector<double> > graph = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
                                             { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
                                             { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
